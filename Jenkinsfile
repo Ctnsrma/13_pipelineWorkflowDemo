@@ -1,24 +1,25 @@
 pipeline {
     agent any
+
     stages {
-        stage('Checkout'){
-            steps{
-                git 'https://github.com/Ctnsrma/13_pipelineWorkflowDemo'
-            }
-        }
+
         stage('Build'){
             steps{
+                echo 'Building Application'
                 bat 'npm install'
             }
         }
+
         stage('Test'){
             steps{
+                echo 'Testing Application'
                 bat 'npm test'
             }
         }
+
         stage('Deploy'){
             steps{
-                bat 'node app.js'
+                echo 'Deploying Application'
             }
         }
     }
