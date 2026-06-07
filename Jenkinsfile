@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout'){
             steps{
-                git 'https://github.com/yourusername/node-pipeline-demo.git'
+                git 'https://github.com/Ctnsrma/13_pipelineWorkflowDemo'
             }
         }
         stage('Build'){
