@@ -3,22 +3,22 @@ pipeline {
     stages {
         stage('Checkout'){
             steps{
-                echo 'Fetching Source Code'
+                git 'https://github.com/yourusername/node-pipeline-demo.git'
             }
         }
         stage('Build'){
             steps{
-                echo 'Building Application'
+                bat 'npm install'
             }
         }
         stage('Test'){
             steps{
-                echo 'Running Tests'
+                bat 'npm test'
             }
         }
         stage('Deploy'){
             steps{
-                echo 'Deploying Application'
+                bat 'node app.js'
             }
         }
     }
