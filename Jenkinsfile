@@ -1,22 +1,21 @@
 pipeline {
     agent any
-
     stages {
-
+        stage('Checkout'){
+            steps{
+                echo 'Fetching Source Code'
+            }
+        }
         stage('Build'){
             steps{
                 echo 'Building Application'
-                bat 'npm install'
             }
         }
-
         stage('Test'){
             steps{
-                echo 'Testing Application'
-                bat 'npm test'
+                echo 'Running Tests'
             }
         }
-
         stage('Deploy'){
             steps{
                 echo 'Deploying Application'
